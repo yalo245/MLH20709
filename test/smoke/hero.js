@@ -1,17 +1,39 @@
-describe('My Little Hero', function () { //define suite title by passing a string
+const sel = require('../../data/selectors.json');
+const exp = require('../../data/expected.json');
 
-    describe('Getting to the page', function () { //define sub-suite title by passing a string
+describe('My Little Hero', function () {
 
-        it('TC-001 Title is correct ', function () { //define test title by passing a string
-            browser.url('https://qa-apps.netlify.app/app_my_hero'); //open baseUrl
-            let title = browser.getTitle(); //get page title and assign it to the "title" variable
-            browser.pause(2000); //just pause to visually see that something is happening on the page
-            expect(title).toEqual('MLH trial'); //compare {title} (actual) and "MLH trial" (expected)
+    describe('Getting to the page', function () {
+
+        it('TC-1.001 Title is correct ', function () {
+            browser.url('https://qa-apps.netlify.app/app_my_hero');
+            let title = browser.getTitle();
+            expect(title).toEqual('MLH trial');
+        });
+
+        it('TC-1.002 Header is present', function () {
+            const header = $(sel.header).isDisplayed();
+            expect(header).toEqual(true);
+        });
+
+        it('TC-1.003 Header is correct', function () {
+            const header = $(sel.header).getText();
+            expect(header).toEqual(exp.header);
+        });
+
+        it('TC-1.004 Description text is present', function () {
+            const description = $(sel.description).isDisplayed();
+            expect(description).toEqual(true);
+        });
+
+        it('TC-1.005 Description text = Let\'s create your own HERO! It\'s super easy with our application!', function () {
+            const description = $(sel.description).isClickable();
+            expect(description).toEqual(exp.description);
         });
 
     });
 
-    describe('Elements exist', function () {
+    xdescribe('Elements exist', function () {
 
         it('TC-002 Label for name', function () {
             const label = $$('.ant-form-item-required')[0].isDisplayed();
@@ -36,3 +58,4 @@ describe('My Little Hero', function () { //define suite title by passing a strin
     });
 
 });
+
