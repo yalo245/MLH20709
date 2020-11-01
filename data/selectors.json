@@ -1,5 +1,9 @@
 {
   "header": "h3",
-  "description": "p"
-
+  "description": "p",
+  "label": ".ant-form-item-required",
+  "storyIF": "#story",
+  "storyPlaceholder": ".ant-select-selection-placeholder",
+  "storyDropdownBtn": ".ant-select-selector",
+  "storyDropdownOption": ".ant-select-item-option-content"
 }
