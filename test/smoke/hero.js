@@ -34,7 +34,7 @@ describe('My Little Hero', function () {
         });
     });
 
-    xdescribe("Type of Story", () => {
+    describe("Type of Story", () => {
 
         it("TC-5.001 Label for type of story is present", () => {
             const label = $$(sel.label)[3].isDisplayed();
@@ -57,14 +57,14 @@ describe('My Little Hero', function () {
         });
 
         it("TC-5.005 Dropdown expands", () => {
-            const elem = $(sel.storyDropdownBtn).click();
+            $(sel.storyDropdownBtn).click();
             const genre = $$(sel.storyDropdownOption).length;
             expect(genre).toEqual(7);
         });
 
         it("TC-5.012 Dropdown contains option Comedy", () => {
-            const elem = $(sel.storyDropdownBtn).click();
-            const genre = $$(sel.storyDropdownOption)[6].waitForDisplayed();
+            $(sel.storyDropdownBtn).click();
+            $$(sel.storyDropdownOption)[6].waitForDisplayed();
             expect($$(sel.storyDropdownOption)[6].getText()).toEqual("Comedy");
         });
     });
