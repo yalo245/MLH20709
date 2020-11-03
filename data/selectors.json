@@ -9,6 +9,6 @@
   "nameField": "#name",
   "namePlaceholder": ".ant-input",
   "age" : "#age",
-  "ageSpinUpButton" : ".ant-input-number-handler ant-input-number-handler-up",
-  "ageSpinDownButton" : ".ant-input-number-handler ant-input-number-handler-down"
+  "ageSpinUpButton" : ".anticon anticon-up ant-input-number-handler-up-inner",
+  "ageSpinDownButton" : ".ant-input-number-handler-ant-input-number-handler-down"
 }

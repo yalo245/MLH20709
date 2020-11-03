@@ -123,18 +123,33 @@ describe('My Little Hero', function () { //test
 
         it('TC-4.008 Input field accepts a 1-digit integers', function () {
             const input = $(sel.age);
-            input.setValue(5);
+            input.setValue(val.ageInputValue);
             expect(input.getValue()).toEqual(val.ageInputValue);
-            input.clearValue();
+            input.doubleClick();
+            browser.pause(2000);
+            browser.keys("Delete");
+            browser.pause(2000);
+            input.setValue('');
         });
 
-        // it('TC-4.005 Input field value increases by 1 if clicking on up spinner button', function () {
-        //     const input = $(sel.age);
-        //     const spinUp = $(sel.ageSpinUpButton);
-        //     input.setValue(val.ageSpinTestValue);
-        //     spinUp.click();
-        //     expect(input.getValue()).toEqual(val.ageSpinTestValue++);
-        // });
+        it('TC-4.005 Input field value increases by 1 if clicking on up spinner button', function () {
+            const input = $(sel.age);
+            const spinUp = $$(".ant-input-number-handler-wrap span")[1];
+            input.setValue(val.ageSpinTestValue);
+            let testValue = input.getValue();
+            spinUp.click();
+            +testValue++;
+            expect(input.getValue()).toEqual(`${testValue}`);
+        });
+
+        it('TC-4.006 Input field value decreases by 1 if clicking on up spinner button', function () {
+            const input = $(sel.age);
+            const spinUp = $$(".ant-input-number-handler-wrap span")[3];
+            let testValue = input.getValue();
+            spinUp.click();
+            +testValue--;
+            expect(input.getValue()).toEqual(`${testValue}`);
+        });
 
 
 
