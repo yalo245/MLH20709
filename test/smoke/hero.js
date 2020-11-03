@@ -1,8 +1,8 @@
-const sel = require('../../data/selectors.json');
-const exp = require('../../data/expected.json');
+import sel from '../../data/selectors.json';
+import exp from '../../data/expected.json';
 
 describe('My Little Hero', function () {
-    before(() => {
+    beforeEach(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
 
@@ -36,27 +36,27 @@ describe('My Little Hero', function () {
 
     describe("Type of Story", () => {
 
-        it("TC-5.001 Label for type of story is present", () => {
+        xit("TC-5.001 Label for type of story is present", () => {
             const label = $$(sel.label)[3].isDisplayed();
             expect(label).toEqual(true);
         });
 
-        it("TC-5.002 Label for type of story = 4. What type of story would you like to read?", () => {
+        xit("TC-5.002 Label for type of story = 4. What type of story would you like to read?", () => {
             const text = $$(sel.label)[3].getAttribute('title');
             expect(text).toEqual("4. What type of story would you like to read?");
         });
 
-        it("TC-5.003 Input field is present", () => {
+        xit("TC-5.003 Input field is present", () => {
             const inputF = $(sel.storyIF).isExisting();
             expect(inputF).toEqual(true);
         });
 
-        it("TC-5.004 Placeholder text = Type of the story", () => {
+        xit("TC-5.004 Placeholder text = Type of the story", () => {
             const text = $(sel.storyPlaceholder).getText();
             expect(text).toEqual("Type of the story");
         });
 
-        it("TC-5.005 Dropdown expands", () => {
+        xit("TC-5.005 Dropdown expands", () => {
             $(sel.storyDropdownBtn).click();
             const genre = $$(sel.storyDropdownOption).length;
             expect(genre).toEqual(7);
@@ -64,7 +64,7 @@ describe('My Little Hero', function () {
 
         it("TC-5.012 Dropdown contains option Comedy", () => {
             $(sel.storyDropdownBtn).click();
-            $$(sel.storyDropdownOption)[6].waitForDisplayed();
+            $(sel.storyDropdownOption).waitForDisplayed();
             expect($$(sel.storyDropdownOption)[6].getText()).toEqual("Comedy");
         });
     });
