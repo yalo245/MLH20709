@@ -6,5 +6,7 @@
   "labelAge" : "3. How old is your Hero?",
   "storyPlaceholder": "Type of the story",
   "namePlaceholder": "Hero's name",
-  "agePlaceholder" : "Hero's age"
+  "agePlaceholder" : "Hero's age",
+  "nameInputValue": "shrek",
+  "tryAgain": "Try again!"
 }
