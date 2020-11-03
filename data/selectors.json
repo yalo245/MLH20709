@@ -7,5 +7,12 @@
   "storyDropdownBtn": ".ant-select-selector",
   "storyDropdownOption": ".ant-select-item-option-content",
   "nameField": "#name",
-  "namePlaceholder": ".ant-input"
+  "namePlaceholder": ".ant-input",
+  "radioClickHeSHeIt": "//span[@class='ant-radio']",
+  "ageField": "#age",
+  "inputFieldTypeStory": "//input[@id='story']",
+  "inputFieldTypeStoryArray": "//div[@class='ant-select-item-option-content']",
+  "submitButton": "//button[@type='submit']",
+  "textOfStory": "//p[@class='card-text']",
+  "tryAgainButton": "//a[@class='btn btn-primary']"
 }

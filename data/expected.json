@@ -5,5 +5,6 @@
   "labelStory": "4. What type of story would you like to read?",
   "storyPlaceholder": "Type of the story",
   "namePlaceholder": "Hero's name",
-  "nameInputValue": "shrek"
+  "nameInputValue": "shrek",
+  "tryAgain": "Try again!"
 }
