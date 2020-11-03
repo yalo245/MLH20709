@@ -5,5 +5,7 @@
   "storyIF": "#story",
   "storyPlaceholder": ".ant-select-selection-placeholder",
   "storyDropdownBtn": ".ant-select-selector",
-  "storyDropdownOption": ".ant-select-item-option-content"
+  "storyDropdownOption": ".ant-select-item-option-content",
+  "nameField": "#name",
+  "namePlaceholder": ".ant-input"
 }
