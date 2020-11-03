@@ -69,6 +69,35 @@ describe('My Little Hero', function () {
         });
     });
 
+    describe('Name Section', function () {
+
+        it('TC-2.001 label 1 is present', function () {
+            const label = $$(sel.label)[0].isDisplayed();
+            expect(label).toEqual(true);
+        });
+
+        it('TC-2.002 label for name = 1. What is your Hero\'s name?', function () {
+            const text = $$(sel.label)[0].getAttribute('title');
+            expect(text).toEqual(exp.labelName);
+        });
+
+        it('TC-2.003 Name field is present', function () {
+            const nameField = $(sel.nameField).isDisplayed();
+            expect(nameField).toEqual(true);
+        });
+
+        it('TC-2.004 Placeholder text = Hero\'s name', function () {
+            const text = $(sel.namePlaceholder).getAttribute('placeholder');
+            expect(text).toEqual(exp.namePlaceholder);
+        });
+
+        it('TC-2.005 Input field accepts lower case letters', function () {
+            const input = $(sel.namePlaceholder);
+            input.addValue('shrek');
+            expect(input.getValue()).toEqual(exp.nameInputValue);
+        });
+    });
+
 
 });
 
