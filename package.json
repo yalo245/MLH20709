@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "report": "allure generate --clean && allure open",
+    "clean": "rm -rf allure-results",
     "test": "wdio wdio.conf.js"
   },
   "keywords": [],
@@ -24,6 +26,7 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
-    "@babel/register": "^7.12.1"
+    "@babel/register": "^7.12.1",
+    "allure-commandline": "^2.13.0"
   }
 }

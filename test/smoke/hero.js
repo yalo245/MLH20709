@@ -1,8 +1,8 @@
-const sel = require('../../data/selectors.json');
-const exp = require('../../data/expected.json');
+import sel from '../../data/selectors.json';
+import exp from '../../data/expected.json';
 const val = require('../../data/values.json');
 
-describe('My Little Hero', function () { //test
+describe('My Little Hero', function () {
     before(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
