@@ -1,5 +1,6 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
+const val = require('../../data/values.json');
 
 describe('My Little Hero', function () { //test
     before(() => {
@@ -63,13 +64,13 @@ describe('My Little Hero', function () { //test
         });
 
         it("TC-5.012 Dropdown contains option Comedy", () => {
-            $(sel.storyDropdownBtn).click();
+            $(sel.storyIF).click();
             $$(sel.storyDropdownOption)[6].waitForDisplayed();
             expect($$(sel.storyDropdownOption)[6].getText()).toEqual("Comedy");
         });
     });
 
-    describe('Name Section', function () {
+    xdescribe('Name Section', function () {
 
         it('TC-2.001 label 1 is present', function () {
             const label = $$(sel.label)[0].isDisplayed();
@@ -94,8 +95,49 @@ describe('My Little Hero', function () { //test
         it('TC-2.005 Input field accepts lower case letters', function () {
             const input = $(sel.namePlaceholder);
             input.addValue('shrek');
-            expect(input.getValue()).toEqual(exp.nameInputValue);
+            expect(input.getValue()).toEqual(val.nameInputValue);
         });
+    });
+
+    describe('Age Section', function () {
+
+        it('TC-4.001 label 1 is present', function () {
+            const label = $$(sel.label)[2].isDisplayed();
+            expect(label).toEqual(true);
+        });
+
+        it('TC-4.002 label for age = 3. How old is your Hero?', function () {
+            const text = $$(sel.label)[2].getAttribute('title');
+            expect(text).toEqual(exp.labelAge);
+        });
+
+        it('TC-4.003 Age input field is present', function () {
+            const label = $(sel.age).isDisplayed();
+            expect(label).toEqual(true);
+        });
+
+        it('TC-4.004 Age input field placeholder text is <Hero\'s age>', function () {
+            const placeHolderText = $(sel.age).getAttribute('placeholder');
+            expect(placeHolderText).toEqual(exp.agePlaceholder);
+        });
+
+        it('TC-4.008 Input field accepts a 1-digit integers', function () {
+            const input = $(sel.age);
+            input.setValue(5);
+            expect(input.getValue()).toEqual(val.ageInputValue);
+            input.clearValue();
+        });
+
+        // it('TC-4.005 Input field value increases by 1 if clicking on up spinner button', function () {
+        //     const input = $(sel.age);
+        //     const spinUp = $(sel.ageSpinUpButton);
+        //     input.setValue(val.ageSpinTestValue);
+        //     spinUp.click();
+        //     expect(input.getValue()).toEqual(val.ageSpinTestValue++);
+        // });
+
+
+
     });
 
 
