@@ -99,6 +99,14 @@ describe('My Little Hero', function () {
         });
     });
 
+    describe('gender Section', function () {
+
+        it('TC-3.001 Verify that Label 2 is present ', function () {
+            const label = $$(sel.label)[1].isDisplayed();
+            expect(label).toEqual(true);
+        });
+    });
+
     xdescribe('Age Section', function () {
 
         it('TC-4.001 label 1 is present', function () {
@@ -226,4 +234,5 @@ describe('My Little Hero', function () {
     });
 
 });
+
 
