@@ -35,7 +35,7 @@ describe('My Little Hero', function () {
         });
     });
 
-    describe("Type of Story", () => {
+    xdescribe("Type of Story", () => {
 
         it("TC-5.001 Label for type of story is present", () => {
             const label = $$(sel.label)[3].isDisplayed();
@@ -99,7 +99,7 @@ describe('My Little Hero', function () {
         });
     });
 
-    describe('Age Section', function () {
+    xdescribe('Age Section', function () {
 
         it('TC-4.001 label 1 is present', function () {
             const label = $$(sel.label)[2].isDisplayed();
@@ -154,7 +154,7 @@ describe('My Little Hero', function () {
 
     });
 
-    describe('Story', function () {
+    xdescribe('Story', function () {
 
         it('TC-7.007 Verify that User can read the story after submitting with choice type of story Comedy', function () {
 
