@@ -4,6 +4,7 @@ import exp from "../../data/expected.json";
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
 
+
 describe("My Little Hero", function () {
   beforeEach(() => {
     browser.url("https://qa-apps.netlify.app/app_my_hero");
@@ -36,7 +37,7 @@ describe("My Little Hero", function () {
     });
   });
 
-  xdescribe("Name Section", function () {
+  describe("Name Section", function () {
     it("TC-2.001 label 1 is present", function () {
       const label = $$(sel.label)[0].isDisplayed();
       expect(label).toEqual(true);
@@ -64,7 +65,7 @@ describe("My Little Hero", function () {
     });
   });
 
-  xdescribe("Gender Section", function () {
+  describe("Gender Section", function () {
     it("TC-3.001 Verify that Label 2 is present ", function () {
       const label = $$(sel.label)[1].isDisplayed();
       expect(label).toEqual(true);
@@ -259,4 +260,29 @@ describe("My Little Hero", function () {
     });
   });
 
-});
+  describe("Create Button", function () {
+
+      it("TC-8.001 Create button is present", function () {
+        const create = $(sel.create).isDisplayed();
+        expect(create).toEqual(true);
+      });
+
+      it("TC-8.002 Create button = Create!", function () {
+        const create = $(sel.create).getText();
+        expect(create).toEqual(exp.create);
+      });
+
+      it("TC-8.010 Create button is clickable after 1-4 are filled in", function () {
+        browser.url("https://qa-apps.netlify.app/app_my_hero");
+        const inputName = $(sel.nameField).setValue("shrek");
+        const inputGender = $$(sel.gender)[0].click();
+        const inputAge = $(sel.age).setValue(230);
+        const click = $(sel.storyClick).click();
+        const inputStory = $$(sel.storyType)[6].click();
+        const create = $(sel.create).isEnabled();
+        browser.pause(3000);
+        expect(create).toEqual(true);
+      });
+    });
+  });
+
