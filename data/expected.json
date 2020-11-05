@@ -2,6 +2,7 @@
   "header": "My Little Hero",
   "description": "Let's create your own HERO! It's super easy with our application!",
   "labelName": "1. What is your Hero's name?",
+  "labelGender": "2. Please choose a gender.",
   "labelStory": "4. What type of story would you like to read?",
   "labelAge" : "3. How old is your Hero?",
   "storyPlaceholder": "Type of the story",
@@ -11,6 +12,7 @@
   "tryAgain": "Try again!",
   "imageLabel": "5. Upload an image (optional).",
   "imagePlaceholder": "drag and drop your image here or browse"
-
-
+  "textGenderHe": "he",
+  "textGenderShe": "she",
+  "textGenderIt": "it"
 }

@@ -2,5 +2,31 @@
   "ageInputValue" : "5",
   "ageSpinTestValue" : "20",
   "name": "LadyBug007",
-  "age": "567"
+  "age": "567",
+  "nameSmoke": {
+    "LadyBug007": "LadyBug007",
+    "LadyBug": "LadyBug",
+    "LADYBUG": "LADYBUG",
+    "ladybug": "ladybug"
+  },
+  "genderSmoke": {
+    "he": 0,
+    "she": 1,
+    "it": 2
+  },
+  "ageSmoke": {
+    "123": "123",
+    "0": 0,
+    "1": 1,
+    "1000000": 1000000
+  },
+  "storyTypeSmoke": {
+    "OvercomingTheMonster": 0,
+    "Rebirth": 1,
+    "Quest": 2,
+    "JourneyAndReturn": 3,
+    "RagsAndRiches": 4,
+    "Tragedy": 5,
+    "Comedy": 6
+  }
 }
