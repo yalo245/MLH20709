@@ -5,7 +5,7 @@
 The trial version will present a one-page app with simple functionalities of chosen parameters and getting an immediate result. The version's goal is to present an idea of the application and get feedback from the focus groups.
 </h5>
 
-<img src="https://lh3.googleusercontent.com/proxy/4bp3X4XwHRT2x4x3vz-oI_HzLG9eW3OW3Wrt-Z5ZYH1uS423ITrVsoa_OWOCHlKEvN6MiOq3fUdGHo6iMstiYH3YG8JxURs" width="200" height="200">
+<img src="https://media2.giphy.com/media/3o7520lCLgQnTKJ1ni/giphy.gif" width="200" height="200">
 
 
 
