@@ -14,5 +14,6 @@
   "imagePlaceholder": "drag and drop your image here or browse",
   "textGenderHe": "he",
   "textGenderShe": "she",
-  "textGenderIt": "it"
+  "textGenderIt": "it",
+  "createBtn": "Create!"
 }
