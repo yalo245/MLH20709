@@ -1,6 +1,8 @@
 import sel from '../../data/selectors.json';
 import exp from '../../data/expected.json';
+
 const val = require('../../data/values.json');
+const inputValues4andClick = require('../../helpers/inputValues4andClick.js');
 
 describe('My Little Hero', function () {
     beforeEach(() => {
@@ -162,17 +164,10 @@ describe('My Little Hero', function () {
 
     });
 
-    xdescribe('Story', function () {
+    describe('Story', function () {
 
         it('TC-7.007 Verify that User can read the story after submitting with choice type of story Comedy', function () {
-
-            const name = $(sel.nameField).setValue(val.name);
-            const setGender = $$(sel.radioClickHeSHeIt)[1].click();
-            const age = $(sel.ageField).setValue(val.age);
-            const clickTypeStory = $(sel.inputFieldTypeStory).click();
-            const clickType = $$(sel.inputFieldTypeStoryArray)[6].click();
-            const activeButton = $(sel.submitButton).isEnabled();
-            const clickCreate = $(sel.submitButton).click();
+            inputValues4andClick(val.nameSmoke.LadyBug007, val.genderSmoke.he, val.ageSmoke["123"], val.storyTypeSmoke.Comedy)
             const textOfStory = $(sel.textOfStory).isDisplayed();
             expect(textOfStory).toEqual(true);
             const tryAgainButton = $(sel.tryAgainButton).isDisplayed();
@@ -180,56 +175,28 @@ describe('My Little Hero', function () {
         });
 
         it('TC-7.013 Verify that submit button is present', function () {
-
-            const name = $(sel.nameField).setValue(val.name);
-            const setGender = $$(sel.radioClickHeSHeIt)[1].click();
-            const age = $(sel.ageField).setValue(val.age);
-            const clickTypeStory = $(sel.inputFieldTypeStory).click();
-            const clickType = $$(sel.inputFieldTypeStoryArray)[6].click();
-            const activeButton = $(sel.submitButton).isEnabled();
-            const clickCreate = $(sel.submitButton).click();
+            inputValues4andClick(val.nameSmoke.LADYBUG, val.genderSmoke.he, val.ageSmoke["1000000"], val.storyTypeSmoke.OvercomingTheMonster)
             const tryAgainButton = $(sel.tryAgainButton).isDisplayed();
             expect(tryAgainButton).toEqual(true);
         });
 
         it('TC-7.014 Verify that submit button name is Try again!', function () {
-
-            const name = $(sel.nameField).setValue(val.name);
-            const setGender = $$(sel.radioClickHeSHeIt)[1].click();
-            const age = $(sel.ageField).setValue(val.age);
-            const clickTypeStory = $(sel.inputFieldTypeStory).click();
-            const clickType = $$(sel.inputFieldTypeStoryArray)[6].click();
-            const activeButton = $(sel.submitButton).isEnabled();
-            const clickCreate = $(sel.submitButton).click();
+            inputValues4andClick(val.nameSmoke.ladybug, val.genderSmoke.he, val.ageSmoke["1"], val.storyTypeSmoke.JourneyAndReturn)
             const tryAgainButton = $(sel.tryAgainButton).getText();
             expect(tryAgainButton).toEqual(exp.tryAgain);
         });
 
         it('TC-7.016 Verify that submit button is active (clickable)', function () {
-
-            const name = $(sel.nameField).setValue(val.name);
-            const setGender = $$(sel.radioClickHeSHeIt)[1].click();
-            const age = $(sel.ageField).setValue(val.age);
-            const clickTypeStory = $(sel.inputFieldTypeStory).click();
-            const clickType = $$(sel.inputFieldTypeStoryArray)[6].click();
-            const activeButton = $(sel.submitButton).isEnabled();
-            const clickCreate = $(sel.submitButton).click();
+            inputValues4andClick(val.nameSmoke.LadyBug, val.genderSmoke.he, val.ageSmoke["1000000"], val.storyTypeSmoke.Rebirth)
             const tryAgainButton = $(sel.tryAgainButton).isClickable();
             expect(tryAgainButton).toEqual(true);
         });
 
         it('TC-7.017 Verify that submit button refreshes the page', function () {
-
-            const name = $(sel.nameField).setValue(val.name);
-            const setGender = $$(sel.radioClickHeSHeIt)[1].click();
-            const age = $(sel.ageField).setValue(val.age);
-            const clickTypeStory = $(sel.inputFieldTypeStory).click();
-            const clickType = $$(sel.inputFieldTypeStoryArray)[6].click();
-            const clickCreate = $(sel.submitButton).click();
-            const tryAgainButton = $(sel.tryAgainButton).click();
-
-            const submitButtonDispl = $(sel.submitButton).waitForDisplayed();
-            expect(submitButtonDispl).toEqual(true);
+            inputValues4andClick(val.nameSmoke.LadyBug, val.genderSmoke.he, val.ageSmoke["123"], val.storyTypeSmoke.Tragedy)
+            $(sel.tryAgainButton).click();
+            const createButtonOnPage = $(sel.submitButton).isDisplayed();
+            expect(createButtonOnPage).toEqual(true);
         });
     });
 
