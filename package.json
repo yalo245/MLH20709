@@ -20,7 +20,8 @@
     "@wdio/selenium-standalone-service": "^6.6.5",
     "@wdio/spec-reporter": "^6.7.0",
     "@wdio/sync": "^6.7.0",
-    "eslint": "^7.12.1"
+    "eslint": "^7.12.1",
+    "prettier": "2.1.2"
   },
   "dependencies": {
     "@babel/cli": "^7.12.1",
