@@ -257,5 +257,27 @@ describe("My Little Hero", function () {
       const createButtonOnPage = $(sel.submitButton).isDisplayed();
       expect(createButtonOnPage).toEqual(true);
     });
+
+    it("TC-8.001 Create button is present", function () {
+      const create = $(sel.create).isDisplayed();
+      expect(create).toEqual(true);
+    });
+
+    it("TC-8.002 Create button = Create!", function () {
+      const create = $(sel.create).getText();
+      expect(create).toEqual(exp.create);
+    });
+
+    it("TC-8.010 Create button is clickable after 1-4 are filled in", function () {
+      browser.url("https://qa-apps.netlify.app/app_my_hero");
+      const inputName = $(sel.nameField).setValue("shrek");
+      const inputGender = $$(sel.gender)[0].click();
+      const inputAge = $(sel.age).setValue(230);
+      const click = $(sel.storyClick).click();
+      const inputStory = $$(sel.storyType)[6].click();
+      const create = $(sel.create).isEnabled();
+      browser.pause(3000);
+      expect(create).toEqual(true);
+    });
   });
 });
