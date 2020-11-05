@@ -99,7 +99,7 @@ describe('My Little Hero', function () {
         });
     });
 
-    describe('gender Section', function () {
+    xdescribe('gender Section', function () {
 
         it('TC-3.001 Verify that Label 2 is present ', function () {
             const label = $$(sel.label)[1].isDisplayed();
@@ -160,6 +160,29 @@ describe('My Little Hero', function () {
         });
 
 
+    });
+
+    xdescribe('picture Section', function () {
+
+        it('TC-6.001 Verify that Label 5 is present ', function () {
+            const image = $$(sel.imageLabel)[4].isDisplayed();
+            expect(image).toEqual(true);
+        });
+
+        it('TC-6.002 Label for image = 5. Upload an image (optional)', function () {
+            const imageLabel = $$(sel.imageLabel)[4].getText();
+            expect(imageLabel).toEqual(exp.imageLabel);
+        });
+
+        it('TC-6.003 Verify that Image input box is present', function () {
+            const imageBox = $$(sel.imageInputBox)[1].isDisplayed();
+            expect(imageBox).toEqual(true);
+        });
+
+        it('TC-6.004 Verify that placeholder text is "drag and drop your image here or browse"', function () {
+            const imagePlacehold = $(sel.imageBoxPlaceholder).getText();
+            expect(imagePlacehold).toEqual(exp.imagePlaceholder);
+        });
     });
 
     xdescribe('Story', function () {
@@ -233,6 +256,10 @@ describe('My Little Hero', function () {
         });
     });
 
+
+
 });
+
+
 
 

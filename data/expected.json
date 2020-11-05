@@ -8,5 +8,9 @@
   "namePlaceholder": "Hero's name",
   "agePlaceholder" : "Hero's age",
   "nameInputValue": "shrek",
-  "tryAgain": "Try again!"
+  "tryAgain": "Try again!",
+  "imageLabel": "5. Upload an image (optional).",
+  "imagePlaceholder": "drag and drop your image here or browse"
+
+
 }

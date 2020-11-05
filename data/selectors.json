@@ -17,5 +17,8 @@
   "inputFieldTypeStoryArray": "//div[@class='ant-select-item-option-content']",
   "submitButton": "//button[@type='submit']",
   "textOfStory": "//p[@class='card-text']",
-  "tryAgainButton": "//a[@class='btn btn-primary']"
+  "tryAgainButton": "//a[@class='btn btn-primary']",
+  "imageLabel": ".ant-form-item-label",
+  "imageInputBox": ".ant-upload",
+  "imageBoxPlaceholder": "//div[contains(text(),'Click or drag and drop')]"
 }
