@@ -177,31 +177,31 @@ describe('My Little Hero', function () {
 
         it("TC-5.012 Dropdown contains option Comedy", () => {
             $(sel.storyIF).click();
-            $$(sel.storyDropdownOption)[6].waitForDisplayed();
-            expect($$(sel.storyDropdownOption)[6].getText()).toEqual("Comedy");
+            const text = $$(sel.storyDropdownOption)[6].getAttribute('title');
+            expect(text).toEqual("Comedy");
         });
     });
 
-    xdescribe('picture Section', function () {
+    xdescribe('Image Section', function () {
 
         it('TC-6.001 Verify that Label 5 is present ', function () {
-            const image = $$(sel.imageLabel)[4].isDisplayed();
-            expect(image).toEqual(true);
+            const label = $$(sel.imageLabel)[4].isDisplayed();
+            expect(label).toEqual(true);
         });
 
-        it('TC-6.002 Label for image = 5. Upload an image (optional)', function () {
-            const imageLabel = $$(sel.imageLabel)[4].getText();
-            expect(imageLabel).toEqual(exp.imageLabel);
+        it('TC-6.002 Label for image = 5. Upload an image (optional).', function () {
+            const text = $$(sel.imageLabel)[4].getText();
+            expect(text).toEqual(exp.imageLabel);
         });
 
         it('TC-6.003 Verify that Image input box is present', function () {
-            const imageBox = $$(sel.imageInputBox)[1].isDisplayed();
-            expect(imageBox).toEqual(true);
+            const inputBox = $$(sel.imageInputBox)[1].isDisplayed();
+            expect(inputBox).toEqual(true);
         });
 
         it('TC-6.004 Verify that placeholder text is "drag and drop your image here or browse"', function () {
-            const imagePlacehold = $(sel.imageBoxPlaceholder).getText();
-            expect(imagePlacehold).toEqual(exp.imagePlaceholder);
+            const text = $(sel.imageBoxPlaceholder).getText();
+            expect(text).toEqual(exp.imagePlaceholder);
         });
     });
 
