@@ -101,11 +101,57 @@ describe('My Little Hero', function () {
         });
     });
 
-    describe('gender Section', function () {
+    xdescribe('gender Section', function () {
 
         it('TC-3.001 Verify that Label 2 is present ', function () {
             const label = $$(sel.label)[1].isDisplayed();
             expect(label).toEqual(true);
+        });
+
+        it('TC-3.002 Verify that text for Label gender = <2. Please choose a gender.> ', function () {
+            const text = $$(sel.label)[1].getAttribute('title');
+            expect(text).toEqual(exp.labelGender);
+        });
+
+        it('TC-3.003 Verify that radio button with name he is present', function () {
+            const genderHe = $$(sel.gender)[0].isDisplayed();
+            expect(genderHe).toEqual(true);
+        });
+
+        it('TC-3.004 Verify that radio button with name she is present', function () {
+            const genderShe = $$(sel.gender)[1].isDisplayed();
+            expect(genderShe).toEqual(true);
+        });
+
+        it('TC-3.005 Verify that radio button with name it is present', function () {
+            const genderIt = $$(sel.gender)[2].isDisplayed();
+            expect(genderIt).toEqual(true);
+        });
+
+        it('TC-3.007 Verify that radio button He is clickable', function () {
+            const clickHe = $$(sel.gender)[0].isClickable();
+            expect(clickHe).toEqual(true);
+        });
+        it('TC-3.008 Verify that radio button She is clickable', function () {
+            const clickShe = $$(sel.gender)[1].isClickable();
+            expect(clickShe).toEqual(true);
+        });
+        it('TC-3.009 Verify that radio button It is clickable', function () {
+            const clickIt = $$(sel.gender)[2].isClickable();
+            expect(clickIt).toEqual(true);
+        });
+
+        it('TC-3.010 Verify that text for radio button he is correct', function () {
+            const textHe = $$(sel.genderText)[0].getText();
+            expect(textHe).toEqual(exp.textGenderHe);
+        });
+        it('TC-3.011 Verify that text for radio button she is correct', function () {
+            const textShe = $$(sel.genderText)[1].getText();
+            expect(textShe).toEqual(exp.textGenderShe);
+        });
+        it('TC-3.012 Verify that text for radio button it is correct', function () {
+            const textIt = $$(sel.genderText)[2].getText();
+            expect(textIt).toEqual(exp.textGenderIt);
         });
     });
 
@@ -164,7 +210,7 @@ describe('My Little Hero', function () {
 
     });
 
-    describe('Story', function () {
+    xdescribe('Story', function () {
 
         it('TC-7.007 Verify that User can read the story after submitting with choice type of story Comedy', function () {
             inputValues4andClick(val.nameSmoke.LadyBug007, val.genderSmoke.he, val.ageSmoke["123"], val.storyTypeSmoke.Comedy)

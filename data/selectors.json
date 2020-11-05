@@ -2,6 +2,8 @@
   "header": "h3",
   "description": "p",
   "label": ".ant-form-item-required",
+  "gender": ".ant-radio",
+  "genderText": ".ant-radio-wrapper",
   "storyIF": "#story",
   "storyPlaceholder": ".ant-select-selection-placeholder",
   "storyDropdownBtn": ".ant-select-selector",
