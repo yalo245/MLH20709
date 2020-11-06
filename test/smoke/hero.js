@@ -184,7 +184,7 @@ describe("My Little Hero", function () {
     });
   });
 
-  xdescribe("Image Section", function () {
+  describe("Image Section", function () {
 
     it("TC-6.001 Verify that Label 5 is present ", function () {
       const label = $$(sel.imageLabel)[4].isDisplayed();
@@ -207,11 +207,6 @@ describe("My Little Hero", function () {
     });
 
     it('TC-6.005 File Upload link is enabled', function () {
-      inputValues4(
-          val.nameInputValue,
-          val.genderSmoke.he,
-          val.ageSmoke["123"],
-          val.storyTypeSmoke.Comedy);
       browser.execute(function(){
         document.getElementsByTagName('input')[6].style.display = "block";
       });
