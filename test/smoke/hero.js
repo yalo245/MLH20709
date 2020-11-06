@@ -1,8 +1,8 @@
 import sel from "../../data/selectors.json";
 import exp from "../../data/expected.json";
-
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
+const inputValues4 = require("../../helpers/inputValues4.js");
 
 
 describe("My Little Hero", function () {
