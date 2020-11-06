@@ -219,10 +219,10 @@ describe("My Little Hero", function () {
 
     it("TC-7.007 Verify that User can read the story after submitting with choice type of story Comedy", function () {
       inputValues4andClick(
-        val.nameSmoke.LadyBug007,
-        val.genderSmoke.he,
-        val.ageSmoke["123"],
-        val.storyTypeSmoke.Comedy
+        val.names.LadyBug007,
+        val.genders.he,
+        val.ages["123"],
+        val.storyTypes.Comedy
       );
       const textOfStory = $(sel.textOfStory).isDisplayed();
       expect(textOfStory).toEqual(true);
@@ -232,10 +232,10 @@ describe("My Little Hero", function () {
 
     it("TC-7.013 Verify that submit button is present", function () {
       inputValues4andClick(
-        val.nameSmoke.LADYBUG,
-        val.genderSmoke.he,
-        val.ageSmoke["1000000"],
-        val.storyTypeSmoke.OvercomingTheMonster
+        val.names.LADYBUG,
+        val.genders.he,
+        val.ages["1000000"],
+        val.storyTypes.OvercomingTheMonster
       );
       const tryAgainButton = $(sel.tryAgainButton).isDisplayed();
       expect(tryAgainButton).toEqual(true);
@@ -243,10 +243,10 @@ describe("My Little Hero", function () {
 
     it("TC-7.014 Verify that submit button name is Try again!", function () {
       inputValues4andClick(
-        val.nameSmoke.ladybug,
-        val.genderSmoke.he,
-        val.ageSmoke["1"],
-        val.storyTypeSmoke.JourneyAndReturn
+        val.names.ladybug,
+        val.genders.he,
+        val.ages["1"],
+        val.storyTypes.JourneyAndReturn
       );
       const tryAgainButton = $(sel.tryAgainButton).getText();
       expect(tryAgainButton).toEqual(exp.tryAgain);
@@ -254,10 +254,10 @@ describe("My Little Hero", function () {
 
     it("TC-7.016 Verify that submit button is active (clickable)", function () {
       inputValues4andClick(
-        val.nameSmoke.LadyBug,
-        val.genderSmoke.he,
-        val.ageSmoke["1000000"],
-        val.storyTypeSmoke.Rebirth
+        val.names.LadyBug,
+        val.genders.he,
+        val.ages["1000000"],
+        val.storyTypes.Rebirth
       );
       const tryAgainButton = $(sel.tryAgainButton).isClickable();
       expect(tryAgainButton).toEqual(true);
@@ -265,10 +265,10 @@ describe("My Little Hero", function () {
 
     it("TC-7.017 Verify that submit button refreshes the page", function () {
       inputValues4andClick(
-        val.nameSmoke.LadyBug,
-        val.genderSmoke.he,
-        val.ageSmoke["123"],
-        val.storyTypeSmoke.Tragedy
+        val.names.LadyBug,
+        val.genders.he,
+        val.ages["123"],
+        val.storyTypes.Tragedy
       );
       $(sel.tryAgainButton).click();
       const createButtonOnPage = $(sel.submitButton).isDisplayed();
@@ -291,9 +291,9 @@ describe("My Little Hero", function () {
       it("TC-8.010 Create button is clickable after 1-4 are filled in", function () {
         inputValues4(
             val.nameInputValue,
-            val.genderSmoke.he,
-            val.ageSmoke["123"],
-            val.storyTypeSmoke.Comedy);
+            val.genders.he,
+            val.ages["123"],
+            val.storyTypes.Comedy);
         const create = $(sel.create).isEnabled();
         expect(create).toEqual(true);
       });
