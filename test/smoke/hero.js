@@ -198,6 +198,10 @@ describe("My Little Hero", function () {
       const text = $(sel.imageBoxPlaceholder).getText();
       expect(text).toEqual(exp.imagePlaceholder);
     });
+
+    it('TC-6.005 File Upload link is enabled', function () {
+
+    });
   });
 
   xdescribe("Story Section", function () {
@@ -260,7 +264,7 @@ describe("My Little Hero", function () {
     });
   });
 
-  describe("Create Button", function () {
+  xdescribe("Create Button", function () {
 
       it("TC-8.001 Create button is present", function () {
         const create = $(sel.create).isDisplayed();
