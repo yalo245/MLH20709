@@ -3,6 +3,7 @@ import exp from "../../data/expected.json";
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
 const inputValues4 = require("../../helpers/inputValues4.js");
+const path = require('path');
 
 
 describe("My Little Hero", function () {
@@ -11,6 +12,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Getting to the page", function () {
+
     it("TC-1.001 Title is correct ", function () {
       let title = browser.getTitle();
       expect(title).toEqual("MLH trial");
@@ -38,6 +40,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Name Section", function () {
+
     it("TC-2.001 label 1 is present", function () {
       const label = $$(sel.label)[0].isDisplayed();
       expect(label).toEqual(true);
@@ -66,6 +69,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Gender Section", function () {
+
     it("TC-3.001 Verify that Label 2 is present ", function () {
       const label = $$(sel.label)[1].isDisplayed();
       expect(label).toEqual(true);
@@ -123,6 +127,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Age Section", function () {
+
     it("TC-4.001 label 1 is present", function () {
       const label = $$(sel.label)[2].isDisplayed();
       expect(label).toEqual(true);
@@ -145,6 +150,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Type of Story Section", () => {
+
     it("TC-5.001 Label for type of story is present", () => {
       const label = $$(sel.label)[3].isDisplayed();
       expect(label).toEqual(true);
@@ -179,6 +185,7 @@ describe("My Little Hero", function () {
   });
 
   xdescribe("Image Section", function () {
+
     it("TC-6.001 Verify that Label 5 is present ", function () {
       const label = $$(sel.imageLabel)[4].isDisplayed();
       expect(label).toEqual(true);
@@ -200,11 +207,21 @@ describe("My Little Hero", function () {
     });
 
     it('TC-6.005 File Upload link is enabled', function () {
-
+      inputValues4(
+          val.nameInputValue,
+          val.genderSmoke.he,
+          val.ageSmoke["123"],
+          val.storyTypeSmoke.Comedy);
+      browser.execute(function(){
+        document.getElementsByTagName('input')[6].style.display = "block";
+      });
+      const inputDiv = $('.ant-upload input').isDisplayed();
+      expect(inputDiv).toEqual(true);
     });
   });
 
   xdescribe("Story Section", function () {
+
     it("TC-7.007 Verify that User can read the story after submitting with choice type of story Comedy", function () {
       inputValues4andClick(
         val.nameSmoke.LadyBug007,
