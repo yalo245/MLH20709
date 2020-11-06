@@ -3,24 +3,28 @@
   "ageSpinTestValue" : "20",
   "name": "LadyBug007",
   "age": "567",
-  "nameSmoke": {
+  "names": {
     "LadyBug007": "LadyBug007",
     "LadyBug": "LadyBug",
     "LADYBUG": "LADYBUG",
-    "ladybug": "ladybug"
+    "ladybug": "ladybug",
+    "Shrek": "Shrek",
+    "shrek": "shrek"
   },
-  "genderSmoke": {
+  "genders": {
     "he": 0,
     "she": 1,
     "it": 2
   },
-  "ageSmoke": {
+  "ages": {
     "123": "123",
     "0": 0,
     "1": 1,
-    "1000000": 1000000
+    "1000000": 1000000,
+    "230": "230",
+    "567": "567"
   },
-  "storyTypeSmoke": {
+  "storyTypes": {
     "OvercomingTheMonster": 0,
     "Rebirth": 1,
     "Quest": 2,
