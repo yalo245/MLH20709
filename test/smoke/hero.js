@@ -1,8 +1,8 @@
 import sel from "../../data/selectors.json";
 import exp from "../../data/expected.json";
-
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
+const inputValues4 = require("../../helpers/inputValues4.js");
 
 
 describe("My Little Hero", function () {
@@ -273,15 +273,15 @@ describe("My Little Hero", function () {
       });
 
       it("TC-8.010 Create button is clickable after 1-4 are filled in", function () {
-        const inputName = $(sel.nameField).setValue("shrek");
-        const inputGender = $$(sel.gender)[0].click();
-        const inputAge = $(sel.age).setValue(230);
-        const click = $(sel.storyClick).click();
-        const inputStory = $$(sel.storyType)[6].click();
+        inputValues4(
+            val.nameInputValue,
+            val.genderSmoke.he,
+            val.ageSmoke["123"],
+            val.storyTypeSmoke.Comedy);
         const create = $(sel.create).isEnabled();
-        browser.pause(3000);
         expect(create).toEqual(true);
       });
     });
+
   });
 
