@@ -63,5 +63,16 @@ describe("My Little Hero: Regression", function () {
             const name = $$(sel.textOfStory)[0];
             expect(name).toHaveTextContaining(exp.name);
         });
+
+        it("TC-7.015 Verify that if 'Hero s name' is entered with lower case it displays with capital letter in the story", function () {
+            inputValues4andClick(
+                val.names.shrek,
+                val.genders.he,
+                val.ages["230"],
+                val.storyTypes.Comedy
+            );
+            const name = $$(sel.textOfStory)[0];
+            expect(name).toHaveTextContaining(exp.herosName);
+        });
     });
 });
