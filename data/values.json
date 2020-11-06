@@ -1,4 +1,5 @@
-{ "nameInputValue": "shrek",
+{
+  "nameInputValue": "shrek",
   "ageInputValue" : "5",
   "ageSpinTestValue" : "20",
   "name": "LadyBug007",

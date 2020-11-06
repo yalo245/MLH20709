@@ -184,7 +184,7 @@ describe("My Little Hero", function () {
     });
   });
 
-  describe("Image Section", function () {
+  xdescribe("Image Section", function () {
 
     it("TC-6.001 Verify that Label 5 is present ", function () {
       const label = $$(sel.imageLabel)[4].isDisplayed();
