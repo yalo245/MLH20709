@@ -209,9 +209,9 @@ describe("My Little Hero", function () {
     it('TC-6.005 File Upload link is enabled', function () {
       inputValues4(
           val.nameInputValue,
-          val.genderSmoke.he,
-          val.ageSmoke["123"],
-          val.storyTypeSmoke.Comedy);
+          val.genders.he,
+          val.ages["123"],
+          val.storyTypes.Comedy);
       browser.execute(function(){
         document.getElementsByTagName('input')[6].style.display = "block";
       });

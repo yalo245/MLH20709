@@ -1,7 +1,10 @@
 import sel from "../../data/selectors.json";
 import exp from "../../data/expected.json";
+const path = require('path');
+
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
+const inputValues4 = require("../../helpers/inputValues4.js");
 
 describe("My Little Hero: Regression", function () {
     beforeEach(() => {
@@ -74,5 +77,49 @@ describe("My Little Hero: Regression", function () {
             const name = $$(sel.textOfStory)[0];
             expect(name).toHaveTextContaining(exp.herosName);
         });
+
+        it("TC-7.018 Verify that image is present", function () {
+            inputValues4(
+                val.names.shrek,
+                val.genders.he,
+                val.ages["567"],
+                val.storyTypes.Comedy
+            );
+
+            const inputDiv = $('.ant-upload input');
+            const submitBtn = $(sel.submitButton);
+            const filePath = path.join(__dirname, '../../data/imgPNG.png');
+            const remoteFilePath = browser.uploadFile(filePath);
+            browser.execute(function () {
+                document.getElementsByTagName('input')[6].style.display = 'block';
+            });
+
+            inputDiv.waitForDisplayed();
+            browser.pause(2000);
+            inputDiv.setValue(remoteFilePath);
+            browser.pause(2000);
+            submitBtn.click();
+            browser.pause(2000);
+
+
+            const imageCheck = $(sel.imageInStory).getAttribute('src');
+            const imageInStoryPresent = imageCheck.length > exp.srcIfNoImageInStory.length;
+            expect(imageInStoryPresent).toEqual(true);
+
+        });
+
+        it("TC-7.019 Verify that image is not present", function () {
+            inputValues4andClick(
+                val.names.shrek,
+                val.genders.he,
+                val.ages["567"],
+                val.storyTypes.Comedy
+            );
+            const imageCheck = $(sel.imageInStory).getAttribute('src');
+            expect(imageCheck).toEqual(exp.srcIfNoImageInStory);
+
+        });
+
+
     });
 });
