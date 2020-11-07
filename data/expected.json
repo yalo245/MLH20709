@@ -18,5 +18,6 @@
   "createBtn": "Create!",
   "create": "Create!",
   "name": "shrek",
-  "herosName": "Shrek"
+  "herosName": "Shrek",
+  "srcIfNoImageInStory": "https://qa-apps.netlify.app/static/error.86e8f937.png"
 }
