@@ -27,5 +27,7 @@
   "imageInputBox": ".ant-upload",
   "imageBoxPlaceholder": "//div[contains(text(),'Click or drag and drop')]",
   "create": ".ant-btn",
-  "tryAgain" : ".btn-primary"
+  "tryAgain" : ".btn-primary",
+  "imageInStory": "//img[@class='error__pic mb-2']",
+  "storyIFContainsTitle": ".ant-select-selection-item"
 }
