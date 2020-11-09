@@ -166,7 +166,7 @@ describe("My Little Hero: Regression", function () {
             $(sel.storyIF).click();
             const textComedy = $$(sel.storyDropdownOption)[6].getAttribute("title");
             $$(sel.storyDropdownOption)[6].click();
-            expect(textComedy).toEqual("Comedy"); // test test
+            expect(textComedy).toEqual("Comedy");
         });
 
     });
