@@ -157,9 +157,14 @@ describe("My Little Hero: Regression", function () {
         });
 
         it('TC-8.008 Verify that submit button is inabled if 5 options are selected   ', function () {
-            inputValues4andClick(val.names.shrek, val.genders.he, val.ages.["230"], val.storyTypes.Comedy);
+            inputValues4(val.names.shrek, val.genders.he, val.ages.["230"], val.storyTypes.Comedy);
             const filePath = path.join(__dirname, '../../data/imgPNG.png');
             const remoteFilePath = browser.uploadFile(filePath);
+            browser.execute(function () {
+                document.getElementsByTagName('input')[6].style.display = 'block';
+            });
+            browser.pause(2000);
+            const submit = $(sel.submitButton).click();
             const textOfStory = $$(sel.textOfStory)[1].isDisplayed();
             expect(textOfStory).toEqual(true);
         });
