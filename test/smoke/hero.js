@@ -3,8 +3,6 @@ import exp from "../../data/expected.json";
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
 const inputValues4 = require("../../helpers/inputValues4.js");
-const path = require('path');
-
 
 describe("My Little Hero", function () {
   beforeEach(() => {
@@ -207,14 +205,11 @@ describe("My Little Hero", function () {
     });
 
     it('TC-6.005 File Upload link is enabled', function () {
-<<<<<<< HEAD
-=======
       inputValues4(
           val.nameInputValue,
           val.genders.he,
           val.ages["123"],
           val.storyTypes.Comedy);
->>>>>>> d6e60076b50ba9cafb442fc1e6f1ef46f0d21a09
       browser.execute(function(){
         document.getElementsByTagName('input')[6].style.display = "block";
       });
