@@ -42,6 +42,18 @@ describe("My Little Hero: Regression", function () {
             expect(its).toHaveTextContaining("its");
         });
 
+        it("TC-7.0101111 The gender should be used for possessive pronouns as well it -- its", function () {
+            inputValues4andClick(
+                val.names.LadyBug007,
+                val.genders.it,
+                val.ages["567"],
+                val.storyTypes.Comedy
+            );
+            const its = $('.mb-4');
+            expect(its).toHaveTextContaining("two cats and");
+        });
+
+
         it("TC-7.011 Verify that age in the story corresponds to entered age", function () {
             inputValues4andClick(
                 val.names.shrek,
