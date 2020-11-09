@@ -161,14 +161,16 @@ describe("My Little Hero: Regression", function () {
         it('TC-5.013 Verify that multiple choices are not allowed', function () {
             $(sel.storyIF).click();
             $$(sel.storyDropdownOption)[5].click();
+            expect($(sel.storyIFContainsTitle).getAttribute('title')).toEqual("Tragedy");
             $(sel.storyIF).click();
             $$(sel.storyDropdownOption)[6].click();
-            const text = $$(sel.storyDropdownOption)[6].getAttribute("title");
-            expect(text).toEqual("Comedy");
+            const textComedy = $(sel.storyIFContainsTitle).getAttribute('title');
+            expect(textComedy).toEqual("Comedy");
         });
 
     });
 });
+
 
 
 
