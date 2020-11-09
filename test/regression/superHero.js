@@ -11,7 +11,7 @@ describe("My Little Hero: Regression", function () {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
 
-        describe("Story Section", function () {
+       describe("Story Section", function () {
             it("TC-7.008 The gender should be used for possessive pronouns as well she -- her", function () {
                 inputValues4andClick(
                     val.names.LadyBug007,
@@ -121,7 +121,7 @@ describe("My Little Hero: Regression", function () {
             });
         });
 
-    xdescribe('Type of story section', function () {
+    describe('Type of story section', function () {
         it('TC-5.006 Verify that dropdown contains Overcoming the Monster', function () {
             $(sel.storyIF).click();
             const text = $$(sel.storyDropdownOption)[0].getAttribute("title");
@@ -160,16 +160,16 @@ describe("My Little Hero: Regression", function () {
 
         it('TC-5.013 Verify that multiple choices are not allowed', function () {
             $(sel.storyIF).click();
-            const textTragedy = $$(sel.storyDropdownOption)[5].getAttribute("title");
             $$(sel.storyDropdownOption)[5].click();
-            expect(textTragedy).toEqual("Tragedy");
             $(sel.storyIF).click();
-            const textComedy = $$(sel.storyDropdownOption)[6].getAttribute("title");
             $$(sel.storyDropdownOption)[6].click();
-            expect(textComedy).toEqual("Comedy");
+            const text = $$(sel.storyDropdownOption)[6].getAttribute("title");
+            expect(text).toEqual("Comedy");
         });
 
     });
 });
+
+
 
 
