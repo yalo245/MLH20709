@@ -10,7 +10,7 @@ describe("My Little Hero: Regression", function () {
     beforeEach(() => {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
-/*
+
     describe("Story Section", function () {
         it("TC-7.008 The gender should be used for possessive pronouns as well she -- her", function () {
             inputValues4andClick(
@@ -122,7 +122,7 @@ describe("My Little Hero: Regression", function () {
 
 
     });
-   */
+
     describe("Submit button", function () {
         it('TC-8.003 Verify that submit button is disabled if none of the options are selected ', function () {
           const submit = $(sel.submitButton).isEnabled();
