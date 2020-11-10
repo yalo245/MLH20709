@@ -12,6 +12,32 @@ describe("My Little Hero: Regression", function () {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
 
+    describe('Name section', function () {
+        it('TC-2.006 Verify that input field accepts upper case letters', function () {
+            $(sel.inputName).setValue(val.names.LADYBUG);
+            const inputUpperCase = $(sel.inputName).getValue();
+            expect(inputUpperCase).toEqual(val.names.LADYBUG);
+        });
+
+        it('TC-2.007 Verify that input field accepts digits', function () {
+            $(sel.inputName).setValue(val.names.allDigits);
+            const inputDigit = $(sel.inputName).getValue();
+            expect(inputDigit).toEqual(val.names.allDigits);
+        });
+
+        it('TC-2.008 Verify that input field accepts special characters', function () {
+            $(sel.inputName).setValue(val.names.specialChar);
+            const inputSpecialChar = $(sel.inputName).getValue();
+            expect(inputSpecialChar).toEqual(val.names.specialChar);
+        });
+
+        it('TC-2.009 Verify that input field accepts 1 symbol ', function () {
+            $(sel.inputName).setValue(val.names.oneSymbol);
+            const inputOneSymbol = $(sel.inputName).getValue();
+            expect(inputOneSymbol).toEqual(val.names.oneSymbol);
+        });
+    });
+
     xdescribe('Type of story section', function () {
         it('TC-5.006 Verify that dropdown contains Overcoming the Monster', function () {
             $(sel.storyIF).click();
@@ -216,7 +242,7 @@ describe("My Little Hero: Regression", function () {
             });
         });
 
-    describe("Submit button", function () {
+    xdescribe("Submit button", function () {
         it('TC-8.003 Verify that submit button is disabled if none of the options are selected ', function () {
           const submit = $(sel.submitButton).isEnabled();
           expect(submit).toEqual(false);

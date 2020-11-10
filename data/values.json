@@ -10,7 +10,10 @@
     "LADYBUG": "LADYBUG",
     "ladybug": "ladybug",
     "Shrek": "Shrek",
-    "shrek": "shrek"
+    "shrek": "shrek",
+    "allDigits": "0123456789",
+    "specialChar": "?!.,#;'",
+    "oneSymbol": "0"
   },
   "genders": {
     "he": 0,
