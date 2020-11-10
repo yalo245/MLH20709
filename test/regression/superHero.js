@@ -36,6 +36,35 @@ describe("My Little Hero: Regression", function () {
             const inputOneSymbol = $(sel.inputName).getValue();
             expect(inputOneSymbol).toEqual(val.names.oneSymbol);
         });
+
+        it('TC-2.010 Verify that input field accepts 70 symbols ', function () {
+            $(sel.inputName).setValue(val.names.seventySymbols);
+            const input70Symbol = $(sel.inputName).getValue();
+            expect(input70Symbol.length).toEqual(70);
+        });
+
+        it('TC-2.011 Verify that input field accepts 47 symbols ', function () {
+            $(sel.inputName).setValue(val.names.fortySevenSymbols);
+            const input47Symbol = $(sel.inputName).getValue();
+            expect(input47Symbol.length > 0 && input47Symbol.length < 70).toEqual(true);
+        });
+
+        it('TC-2.012 Verify that input field accepts 71 symbols ', function () {
+            $(sel.inputName).setValue(val.names.seventyOneSymbols);
+            const errorMessage = $(sel.nameErrorMessage).getText();
+            expect(errorMessage).toEqual(exp.nameErrorMessage);
+        });
+
+        it('TC-2.013 Verify that input field trimmed spaces  ', function () {
+            inputValues4andClick(
+                val.names.trimSpacesBeforeAfter,
+                val.genders.she,
+                val.ages["567"],
+                val.storyTypes.Comedy
+            );
+            const nameInStory = $$(sel.textOfStory)[0];
+            expect(nameInStory).toHaveTextContaining('The Hero,');
+        });
     });
 
     xdescribe('Type of story section', function () {

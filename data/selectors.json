@@ -31,5 +31,6 @@
   "imageInStory": "//img[@class='error__pic mb-2']",
   "storyIFContainsTitle": ".ant-select-selection-item",
   "imagePreviewForImgPNG": "[alt='imgPNG.png']",
-  "imageBinIcon": "[title='Remove file']"
+  "imageBinIcon": "[title='Remove file']",
+  "nameErrorMessage": ".ant-form-item-explain"
 }

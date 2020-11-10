@@ -19,5 +19,6 @@
   "create": "Create!",
   "name": "shrek",
   "herosName": "Shrek",
-  "srcIfNoImageInStory": "https://qa-apps.netlify.app/static/error.86e8f937.png"
+  "srcIfNoImageInStory": "https://qa-apps.netlify.app/static/error.86e8f937.png",
+  "nameErrorMessage": "70 symbols max"
 }
