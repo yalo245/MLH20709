@@ -13,7 +13,7 @@ describe("My Little Hero: Regression", function () {
     });
 
     describe('Image Section', function () {
-        xit('TC-6.007 After uploading an image, image preview is displayed', function () {
+        it('TC-6.007 After uploading an image, image preview is displayed', function () {
             imgPNGFileUpload();
             browser.waitUntil(
                 () => $(sel.imagePreviewForImgPNG).isDisplayed(),
@@ -24,7 +24,7 @@ describe("My Little Hero: Regression", function () {
             expect(image).toEqual(true);
         });
 
-        xit('TC-6.008 Upon clicking on bin icon, image gets deleted', function () {
+        it('TC-6.008 Upon clicking on bin icon, image gets deleted', function () {
             imgPNGFileUpload();
             browser.waitUntil(
                 () => $(sel.imagePreviewForImgPNG).isDisplayed(),
@@ -49,16 +49,24 @@ describe("My Little Hero: Regression", function () {
             const remoteFilePath = browser.uploadFile(filePath);
             inputDiv.waitForDisplayed();
             inputDiv.setValue(remoteFilePath);
-            browser.pause(4000);
             $(sel.submitButton).click();
-            browser.pause(2000);
             const srcContent = $('.error__pic').getAttribute('src');
-            expect(srcContent.length).toEqual(10);
+            expect(srcContent.length > 53).toEqual(true); //if image is not uploaded, length of link = 53
         });
 
-        // it('TC-6.010 Uploading png file is enabled', function () {
-        //
-        // });
+        it('TC-6.010 Uploading png file is enabled', function () {
+            inputValues4(
+                val.names.shrek,
+                val.genders.he,
+                val.ages["230"],
+                val.storyTypes.Comedy
+            );
+            fieUploadLinkAppear();
+            imgPNGFileUpload();
+            $(sel.submitButton).click();
+            const srcContent = $(sel.imageInStory).getAttribute('src');
+            expect(srcContent.length > 53).toEqual(true); //if image is not uploaded, length of link =
+        });
     });
 
     xdescribe("Story Section", function () {
