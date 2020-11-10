@@ -12,7 +12,55 @@ describe("My Little Hero: Regression", function () {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
 
-    describe('Image Section', function () {
+    xdescribe('Type of story section', function () {
+        it('TC-5.006 Verify that dropdown contains Overcoming the Monster', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[0].getAttribute("title");
+            expect(text).toEqual("Overcoming the Monster");
+        });
+
+        it('TC-5.007 Verify that dropdown contains Rebirth', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[1].getAttribute("title");
+            expect(text).toEqual("Rebirth");
+        });
+
+        it('TC-5.008 Verify that dropdown contains Quest', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[2].getAttribute("title");
+            expect(text).toEqual("Quest");
+        });
+
+        it('TC-5.009 Verify that dropdown contains Journey and Return', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[3].getAttribute("title");
+            expect(text).toEqual("Journey and Return");
+        });
+
+        it('TC-5.010 Verify that dropdown contains Rags and Riches', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[4].getAttribute("title");
+            expect(text).toEqual("Rags and Riches");
+        });
+
+        it('TC-5.011 Verify that dropdown contains Tragedy', function () {
+            $(sel.storyIF).click();
+            const text = $$(sel.storyDropdownOption)[5].getAttribute("title");
+            expect(text).toEqual("Tragedy");
+        });
+
+        it('TC-5.013 Verify that multiple choices are not allowed', function () {
+            $(sel.storyIF).click();
+            $$(sel.storyDropdownOption)[5].click();
+            expect($(sel.storyIFContainsTitle).getAttribute('title')).toEqual("Tragedy");
+            $(sel.storyIF).click();
+            $$(sel.storyDropdownOption)[6].click();
+            const textComedy = $(sel.storyIFContainsTitle).getAttribute('title');
+            expect(textComedy).toEqual("Comedy");
+        });
+    });
+
+    xdescribe('Image Section', function () {
         it('TC-6.007 After uploading an image, image preview is displayed', function () {
             imgPNGFileUpload();
             browser.waitUntil(
@@ -165,54 +213,6 @@ describe("My Little Hero: Regression", function () {
                 );
                 const imageCheck = $(sel.imageInStory).getAttribute('src');
                 expect(imageCheck).toEqual(exp.srcIfNoImageInStory);
-            });
-        });
-
-    xdescribe('Type of story section', function () {
-            it('TC-5.006 Verify that dropdown contains Overcoming the Monster', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[0].getAttribute("title");
-                expect(text).toEqual("Overcoming the Monster");
-            });
-
-            it('TC-5.007 Verify that dropdown contains Rebirth', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[1].getAttribute("title");
-                expect(text).toEqual("Rebirth");
-            });
-
-            it('TC-5.008 Verify that dropdown contains Quest', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[2].getAttribute("title");
-                expect(text).toEqual("Quest");
-            });
-
-            it('TC-5.009 Verify that dropdown contains Journey and Return', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[3].getAttribute("title");
-                expect(text).toEqual("Journey and Return");
-            });
-
-            it('TC-5.010 Verify that dropdown contains Rags and Riches', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[4].getAttribute("title");
-                expect(text).toEqual("Rags and Riches");
-            });
-
-            it('TC-5.011 Verify that dropdown contains Tragedy', function () {
-                $(sel.storyIF).click();
-                const text = $$(sel.storyDropdownOption)[5].getAttribute("title");
-                expect(text).toEqual("Tragedy");
-            });
-
-            it('TC-5.013 Verify that multiple choices are not allowed', function () {
-                $(sel.storyIF).click();
-                $$(sel.storyDropdownOption)[5].click();
-                expect($(sel.storyIFContainsTitle).getAttribute('title')).toEqual("Tragedy");
-                $(sel.storyIF).click();
-                $$(sel.storyDropdownOption)[6].click();
-                const textComedy = $(sel.storyIFContainsTitle).getAttribute('title');
-                expect(textComedy).toEqual("Comedy");
             });
         });
 
