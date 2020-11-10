@@ -154,7 +154,6 @@ describe("My Little Hero: Regression", function () {
                 const imageCheck = $(sel.imageInStory).getAttribute('src');
                 const imageInStoryPresent = imageCheck.length > exp.srcIfNoImageInStory.length;
                 expect(imageInStoryPresent).toEqual(true);
-
             });
 
             it("TC-7.019 Verify that image is not present", function () {
@@ -216,6 +215,49 @@ describe("My Little Hero: Regression", function () {
                 expect(textComedy).toEqual("Comedy");
             });
         });
+
+    describe("Submit button", function () {
+        it('TC-8.003 Verify that submit button is disabled if none of the options are selected ', function () {
+          const submit = $(sel.submitButton).isEnabled();
+          expect(submit).toEqual(false);
+        });
+
+        it('TC-8.004 Verify that submit button is disabled if only 1 option is selected  ', function () {
+            $(sel.nameField).setValue(val.names.shrek);
+            const submit = $(sel.submitButton).isEnabled();
+            expect(submit).toEqual(false);
+        });
+
+        it('TC-8.005 Verify that submit button is disabled if only 2 options are selected  ', function () {
+            $(sel.nameField).setValue(val.names.shrek);
+            $$(sel.gender)[0].click();
+            const submit = $(sel.submitButton).isEnabled();
+            expect(submit).toEqual(false);
+        });
+
+        it('TC-8.006 Verify that submit button is disabled if only 3 options are selected   ', function () {
+            $(sel.nameField).setValue(val.names.shrek);
+            $$(sel.gender)[0].click();
+            $(sel.age).setValue(val.ages["230"]);
+            const submit = $(sel.submitButton).isEnabled();
+            expect(submit).toEqual(false);
+        });
+
+        it('TC-8.007 Verify that submit button is enabled if 4 options are selected  ', function () {
+            inputValues4andClick(val.names.shrek, val.genders.he, val.ages["230"], val.storyTypes.Comedy);
+            const textOfStory = $(sel.textOfStory).isDisplayed();
+            expect(textOfStory).toEqual(true);
+        });
+
+        it('TC-8.008 Verify that submit button is enabled if 5 options are selected   ', function () {
+            inputValues4(val.names.shrek, val.genders.he, val.ages["230"], val.storyTypes.Comedy);
+            fieUploadLinkAppear();
+            imgPNGFileUpload();
+            $(sel.submitButton).click();
+            const textOfStory = $$(sel.textOfStory)[1].isDisplayed();
+            expect(textOfStory).toEqual(true);
+        });
+    });
 
 });
 
