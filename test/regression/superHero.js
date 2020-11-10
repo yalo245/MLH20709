@@ -1,17 +1,67 @@
 import sel from "../../data/selectors.json";
 import exp from "../../data/expected.json";
 const path = require('path');
-
 const val = require("../../data/values.json");
 const inputValues4andClick = require("../../helpers/inputValues4andClick.js");
 const inputValues4 = require("../../helpers/inputValues4.js");
+const fieUploadLinkAppear = require('../../helpers/fileUploadLinkAppear.js');
+const imgPNGFileUpload = require('../../helpers/imgPNGFileUpload.js');
 
 describe("My Little Hero: Regression", function () {
     beforeEach(() => {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
 
-    describe("Story Section", function () {
+    describe('Image Section', function () {
+        xit('TC-6.007 After uploading an image, image preview is displayed', function () {
+            imgPNGFileUpload();
+            browser.waitUntil(
+                () => $(sel.imagePreviewForImgPNG).isDisplayed(),
+                {
+                    timeout: 4000
+                });
+            const image = $(sel.imagePreviewForImgPNG).isDisplayed();
+            expect(image).toEqual(true);
+        });
+
+        xit('TC-6.008 Upon clicking on bin icon, image gets deleted', function () {
+            imgPNGFileUpload();
+            browser.waitUntil(
+                () => $(sel.imagePreviewForImgPNG).isDisplayed(),
+                {
+                    timeout: 4000
+                });
+            expect($(sel.imagePreviewForImgPNG).isDisplayed()).toEqual(true);
+            $(sel.imageBinIcon).click();
+            expect($(sel.imagePreviewForImgPNG).isDisplayed()).toEqual(false);
+        });
+
+        it('TC-6.009 Uploading jpeg file in enabled', function () {
+            inputValues4(
+                val.names.shrek,
+                val.genders.he,
+                val.ages["230"],
+                val.storyTypes.Comedy
+            );
+            fieUploadLinkAppear();
+            const inputDiv = $('.ant-upload input');
+            const filePath = path.join(__dirname, '../../data/imgJPEG.jpeg');
+            const remoteFilePath = browser.uploadFile(filePath);
+            inputDiv.waitForDisplayed();
+            inputDiv.setValue(remoteFilePath);
+            browser.pause(4000);
+            $(sel.submitButton).click();
+            browser.pause(2000);
+            const srcContent = $('.error__pic').getAttribute('src');
+            expect(srcContent.length).toEqual(10);
+        });
+
+        // it('TC-6.010 Uploading png file is enabled', function () {
+        //
+        // });
+    });
+
+    xdescribe("Story Section", function () {
            it("TC-7.008 The gender should be used for possessive pronouns as well she -- her", function () {
                 inputValues4andClick(
                     val.names.LadyBug007,
@@ -85,14 +135,11 @@ describe("My Little Hero: Regression", function () {
                     val.ages["567"],
                     val.storyTypes.Comedy
                 );
-
                 const inputDiv = $('.ant-upload input');
                 const submitBtn = $(sel.submitButton);
                 const filePath = path.join(__dirname, '../../data/imgPNG.png');
                 const remoteFilePath = browser.uploadFile(filePath);
-                browser.execute(function () {
-                    document.getElementsByTagName('input')[6].style.display = 'block';
-                });
+                fieUploadLinkAppear();
                 inputDiv.waitForDisplayed();
                 inputDiv.setValue(remoteFilePath);
                 submitBtn.click();
@@ -114,7 +161,7 @@ describe("My Little Hero: Regression", function () {
             });
         });
 
-    describe('Type of story section', function () {
+    xdescribe('Type of story section', function () {
             it('TC-5.006 Verify that dropdown contains Overcoming the Monster', function () {
                 $(sel.storyIF).click();
                 const text = $$(sel.storyDropdownOption)[0].getAttribute("title");

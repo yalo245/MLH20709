@@ -29,5 +29,7 @@
   "create": ".ant-btn",
   "tryAgain" : ".btn-primary",
   "imageInStory": "//img[@class='error__pic mb-2']",
-  "storyIFContainsTitle": ".ant-select-selection-item"
+  "storyIFContainsTitle": ".ant-select-selection-item",
+  "imagePreviewForImgPNG": "[alt='imgPNG.png']",
+  "imageBinIcon": "[title='Remove file']"
 }
