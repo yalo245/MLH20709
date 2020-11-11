@@ -12,7 +12,7 @@ describe("My Little Hero: Regression", function () {
         browser.url("https://qa-apps.netlify.app/app_my_hero");
     });
 
-    describe('Name section', function () {
+    xdescribe('Name section', function () {
         it('TC-2.006 Verify that input field accepts upper case letters', function () {
             $(sel.inputName).setValue(val.names.LADYBUG);
             const inputUpperCase = $(sel.inputName).getValue();
@@ -64,6 +64,16 @@ describe("My Little Hero: Regression", function () {
             );
             const nameInStory = $$(sel.textOfStory)[0];
             expect(nameInStory).toHaveTextContaining('The Hero,');
+        });
+    });
+
+    describe('Age Section', function () {
+        it('TC-4.005 Verify that integer increases by 1 if clicking <+>  on spinner button  ', function () {
+          $(sel.ageField).setValue(val.ageSpinTestValue);
+          $(sel.ageSpinUpButtonClick).click();
+          $(sel.ageSpinUpButtonClick).click();
+          const text =$(sel.ageField).getValue();
+          expect(text).toEqual("22");
         });
     });
 
